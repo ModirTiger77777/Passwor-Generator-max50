@@ -2,12 +2,12 @@ const charAmountRange = document.getElementById('charAmountRange')
 const charAmountNumber = document.getElementById('charAmountNumber')
 const form = document.getElementById('password-generator')
 const includeUppercaseElement = document.getElementById('includeUppercase')
-const includenumbersElement = document.getElementById('includeNumbers')
-const includeSymbols = document.getElementById('includeSymbols')
+const includeNumbersElement = document.getElementById('includeNumbers')
+const includeSymbolsElement = document.getElementById('includeSymbols')
 const passwordShow = document.getElementById('passwordShow')
 
 const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
-const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(9, 122)
+const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
 const NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
 const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
     arrayFromLowToHigh(58, 64)
@@ -39,8 +39,8 @@ function generatePassword(characterAmount, includeUppercase,
     includeNumbers, includeSymbols) {
         let charCodes = LOWERCASE_CHAR_CODES
         if(includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
-        if(includeNumbers) charCodes = charCodes.concat(NUMBERS_CHAR_CODES)
-        if(includeSymbols) charCodes = charCodes.concat(SYMBOLS_CHAR_CODES)
+        if(includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
+        if(includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
 
         const passwordCharacters = []
         for (let i = 0; i<characterAmount; i++) {

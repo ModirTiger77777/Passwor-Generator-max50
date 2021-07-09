@@ -33,6 +33,10 @@ body{
     text-align: center;
 }
 
+label{
+    font-weight: bold;
+}
+
 .character-amount-container{
     display: flex;
     align-items: center;
