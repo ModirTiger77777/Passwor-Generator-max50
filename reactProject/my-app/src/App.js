@@ -4,7 +4,7 @@ import Pricing from './Pricing';
 import About from './About';
 import Navbar from './Navbar';
 import './Navbar.css'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 
 function App() {
@@ -12,9 +12,11 @@ function App() {
     <BrowserRouter>  
       <div >
         <Navbar/>
-        <Route path="/home" component={Home} />
-        <Route path="/pricing" component={Pricing} />
-        <Route path="/about" component={About} />
+        <Switch>
+           <Route exact path="/" component={Home} />
+           <Route path="/pricing" component={Pricing} />
+           <Route path="/about" component={About} />
+        </Switch>
       </div>
     </BrowserRouter>
   );
